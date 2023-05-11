@@ -1,0 +1,32 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  width: 100vw;
+}
+
+
+
+
+/*             Commons styles   */
+.container{
+  width: 90%;
+  margin: 20px auto;
+}
+.d-flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-flex-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.d-flex-column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* star header area */
+/* end header area */
