@@ -1,16 +1,23 @@
-body{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 700;
-  width: 100vw;
+
+:root{
+  --main-color:rgb(153, 226, 43)
 }
 
 
 
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  width: 100vw;
+  min-height: auto;
+  position: relative;
+}
 
 /*             Commons styles   */
 .container{
-  width: 90%;
-  margin: 20px auto;
+  width: 80vw;
+  height: 100%;
+  margin: 0 auto;
 }
 .d-flex-center{
   display: flex;
@@ -29,4 +36,199 @@ body{
   flex-direction: column;
 }
 /* star header area */
+header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  z-index: 1111;
+}
+.header-area{
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(1, 0, 0, 0.643);
+}
+.header-area .logo{
+  width: 20%;
+  line-height: 70px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+.header-area .nav-bar{
+  width: 60%;
+  height: 70px;
+}
+.header-area .nav-bar .list-item{
+  width: 100%;
+  height: 100%;
+}
+.header-area .nav-bar .list-item .item{
+  list-style: none;
+  height: 40px;
+  /* width: 90%; */
+  line-height: 40px;
+  margin: 0 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.nav-bar .list-item .item .link{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding-top: 10px 0;
+  transition: .4s ease;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -ms-transition: .4s ease;
+  -o-transition: .4s ease;
+}
+.nav-bar .list-item .item .link:hover,
+.nav-bar .list-item .item .link.active{
+  color: var(--main-color);
+}
+.header-area .theme{
+  width: 10%;
+  line-height: 70px;
+}
 /* end header area */
+
+/* end main area */
+.main{
+  width: 100%;
+  height: auto;
+}
+.section-home{
+  width: 100%;
+  height: 100vh;
+  background-color: #6f3a3a;
+}
+.section-home .section-main-content{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.section-home .section-main-content .overlay{
+  position: absolute;
+  background-color: #00000072;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.container .text-presentation{
+  position: absolute;
+  z-index: 21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vmin;
+  height: 90%;
+}
+.container .title{
+  color: aqua;
+}
+.container .desc-title{
+
+}
+.container .btn-title{
+
+}
+
+
+
+
+/* star  slider */
+.slide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: url(/images/1.JPG) center center;
+} 
+.slide .slider-content{
+  width: 100%;
+  height: 100%;
+}
+.slide .slider-content .btn-controle{
+  width: 100%;
+  height: 100%;
+}
+.slide .slider-content .btn{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #faf9f979;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: .4s ease;
+  border: none;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -ms-transition: .4s ease;
+  -o-transition: .4s ease;
+  z-index: 11;
+  cursor: pointer;
+
+}
+.btn-prev{
+  top: 50%;
+  left: 30px;
+}
+.btn-next{
+  top: 50%;
+  right: 30px;
+}
+.slider-content .btn:hover{
+  background-color: var(--main-color);
+}
+.bulls{
+  width:auto;
+  height: 30px;
+  border-radius: 20px;
+  background: #f6f6f7aa;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  line-height:40px;
+  z-index: 11;
+  cursor: pointer;
+}
+
+/*   created li whit js files */
+
+ul li[data-number]{
+  list-style:none;
+  width:20px;
+  height:20px;
+  text-align: center;
+  margin: 5px auto;
+  line-height:20px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+/*    dynamic style for created li*/
+ul li[data-number].active{
+  color: var(--main-color);
+}
+/* end  slider */
+/* end main */
