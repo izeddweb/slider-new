@@ -70,3 +70,37 @@ for (const item of liItem) {
     return slide.style.background = `url(/images/${counterImg}.JPG)center center`;
   })
 }
+
+
+//   setup aside bar
+
+const asideIcon = document.querySelector('.icon-span')
+const icon = document.querySelector('.fa-gear')
+const aside = document.querySelector('.aside')
+let spans = document.querySelectorAll('.content-aside span')
+const colorSpan = document.querySelector('[data-color]')
+
+//set aside function
+asideIcon.addEventListener('click',hideMe);
+function hideMe (){
+  aside.classList.toggle('show-me-aside')
+  icon.classList.toggle('fa-spin')
+}
+
+//set color main change function
+Array.from(spans).forEach(ele =>{
+  ele.onclick=function (){
+    let color = ele.getAttribute('data-color')
+    document.documentElement.style.setProperty('--main-color',color)
+  }
+})
+
+
+
+
+
+
+
+
+
+
