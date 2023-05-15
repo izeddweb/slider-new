@@ -1,13 +1,15 @@
 
 :root{
   --white-color:white;
-  --white-sub-color:rgba(252, 252, 252, 0.586);
   --black-color:black;
-  --black-sub-color:rgba(0, 0, 0, 0.612);
   --main-color:rgb(153, 226, 43);
+  --white-sub-color:rgba(252, 252, 252, 0.586);
+  --black-sub-color:rgba(0, 0, 0, 0.612);
 }
-
-
+.darkTheme{
+  --white-color:black;
+  --black-color:white;
+}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -15,6 +17,8 @@ body{
   width: 100vw;
   height: 1100px;
   position: relative;
+  background-color: var(--white-color);
+  color: var(--black-color);
 }
 
 /*             Commons styles   */
@@ -50,6 +54,8 @@ header {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 10px rgba(1, 0, 0, 0.643);
+  background-color: var(--white-color);
+  color: var(--black-color);
 }
 .header-area .logo{
   width: 20%;
@@ -69,15 +75,16 @@ header {
 .header-area .nav-bar .list-item .item{
   list-style: none;
   height: 40px;
-  /* width: 90%; */
   line-height: 40px;
   margin: 0 5px;
   text-align: center;
   text-transform: uppercase;
 }
 .nav-bar .list-item .item .link{
-  height: 100%;
-  width: 100%;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  /* height: 100%;
+  width: 100%; */
   text-align: center;
   text-decoration: none;
   font-size: 20px;
@@ -92,16 +99,18 @@ header {
 .nav-bar .list-item .item .link.active{
   color: var(--main-color);
 }
+/*        star theme */
 .header-area .theme{
   width: 10%;
-  line-height: 60px;
-  height: 60px;
+  line-height: 50px;
+  height: 50px;
   margin :10px 0;
+  position: relative;
 }
 .theme .content-theme{
   width: 100%;
   height: 100%;
-  background-color: var(--white-color);
+  background-color: var(--black-color);
   border-radius: 40px;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
@@ -109,10 +118,10 @@ header {
   -o-border-radius: 40px;
 }
 .theme .content-theme .btn-theme{
-  background-color: var(--black-color);
-  color: var(--white-color);
-  width: 50px;
-  height: 50px;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  width: 40px;
+  height: 40px;
   margin: 5px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -120,18 +129,10 @@ header {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-/* dynamic class btn theme */
+/*      dynamic class btn theme */
 .float-r{
   float: right;
-  background-color: var(--white-color);
-  color: var(--black-color);
 }
-
-
-
-
-
-
 
 
 
@@ -145,14 +146,14 @@ header {
 .section-home{
   width: 100%;
   height: 100vh;
-  background-color: #6f3a3a;
+  /* background-color: var(--white-color);
+  color: var(--black-color); */
 }
 .section-home .section-main-content{
   width: 100%;
   height: 100vh;
   position: relative;
 }
-
 /* set aside bar */
 /* star aside bar */
 
@@ -198,7 +199,6 @@ header {
   height: 100%;
   width: 100%;
   gap: 10px;
-  
 }
 .aside .content-aside .color-span{
   height: 40px;
@@ -209,7 +209,6 @@ header {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   cursor: pointer;
-
 }
 .content-aside .color-span:nth-child(1){
   background-color:#1768eb;
@@ -229,29 +228,6 @@ header {
 .show-me-aside{
   left: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -280,6 +256,16 @@ header {
   height: 90%;
 }
 .container .title{
+  transition: .5s;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+}
+.container sub{
   color:var(--main-color);
   font-size: 50px;
   font-weight: bolder;
@@ -306,12 +292,12 @@ header {
   -ms-transition: .3s;
   -o-transition: .3s;
   font-size: 22px;
+  background-color: var(--white-color);
+  color: var(--black-color);
 }
 .container .btn-title:hover{
   background-color: var(--main-color);
 }
-
-
 
 
 /* star  slider */
@@ -337,7 +323,8 @@ header {
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: #faf9f979;
+  background-color: transparent;
+  color: var(--black-color);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -368,7 +355,8 @@ header {
   width:auto;
   height: 30px;
   border-radius: 20px;
-  background: #f6f6f7aa;
+  background-color: var(--white-color);
+  color: var(--black-color);
   position: absolute;
   bottom: 40px;
   left: 50%;
