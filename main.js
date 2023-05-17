@@ -27,30 +27,31 @@ liItem = Array.from(document.querySelectorAll("[data-number]"));
 let counterImg = 1;
 btnPrev.addEventListener("click", decrem);
 
-let li;
 function decrem() {
   liItem.map(function (ele) {
     parseInt(ele.getAttribute("data-number")) === counterImg
       ? ele.classList.add("active")
       : ele.classList.remove("active");
   });
-
-  //
   if (counterImg === 1) counterImg = images.length;
   else counterImg--;
-  return (slide.style.background = `url(/images/${counterImg}.JPG)center center`);
+  (slide.style.background = `url(/images/${counterImg}.JPG)center center`);
 }
 
 btnNext.addEventListener("click", crem);
 
 function crem() {
-  console.log(counterImg);
+  liItem.map(function (ele) {
+    parseInt(ele.getAttribute("data-number")) === counterImg
+      ? ele.classList.add("active")
+      : ele.classList.remove("active");
+  });
   if (counterImg === images.length) counterImg = 1;
   else counterImg++;
-  console.log(counterImg);
-  return (slide.style.background = `url(/images/${counterImg}.JPG)center center`);
+  (slide.style.background = `url(/images/${counterImg}.JPG)center center`);
+  return counterImg
 }
-
+console.log(counterImg);
 // create bulls item from images
 
 for (const item of liItem) {
@@ -87,10 +88,6 @@ Array.from(spans).forEach((ele) => {
   };
 });
 
-//  important   a retenir
-// console.log(document.documentElement.style.setProperty('--black-color','yellow')
-// );
-
 //    setup theme
 const themeContent = document.querySelector(".content-theme");
 const btnTheme = document.querySelector(".btn-theme");
@@ -100,13 +97,7 @@ btnTheme.addEventListener("click", changeTheme);
 function changeTheme() {
   btnTheme.classList.toggle("float-r");
   body.classList.toggle("darkTheme");
+  if(btnTheme.textContent == 'ligth') btnTheme.innerHTML ='dark'
+  else {btnTheme.innerHTML ='ligth'}
 }
 
-//    when scrooling header change BGC to black
-const header = document.querySelector("header");
-window.addEventListener("scroll", changeBGC);
-
-function changeBGC() {
-  if (document.documentElement.scrollTop > 150) header.style.background = "var(--black-color)";
-  else header.style.background = "transparent";
-}
